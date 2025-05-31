@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:happy_chat/controllers/login_controller.dart';
-import 'package:happy_chat/themes.dart';
-import 'package:happy_chat/view/otp.dart';
 import 'package:happy_chat/widget/texts.dart';
 
 class Login extends StatelessWidget {
   Login({super.key});
-
   final login = Get.find<LoginController>();
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -49,7 +45,6 @@ class Login extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                   ),
-                  // textfield
                   Obx(() {
                     return Container(
                       width: Get.width / 1.2,
@@ -103,7 +98,6 @@ class Login extends StatelessWidget {
                     height: 12,
                   ),
                   Expanded(child: Container()),
-
                   Obx(
                     () {
                       return ElevatedButton(
@@ -122,7 +116,7 @@ class Login extends StatelessWidget {
 
                         },
                         child: SizedBox(
-                          width: Get.width / 1.3, // یک‌سوم عرض
+                          width: Get.width / 1.3,
                           child: Center(
                             child: login.isLoadingLogin.value ?CircularProgressIndicator(color: Colors.white,) :Text(
                               TextsView.textButton,
@@ -133,7 +127,6 @@ class Login extends StatelessWidget {
                       );
                     },
                   ),
-
                   Expanded(child: Container())
                 ],
               ),

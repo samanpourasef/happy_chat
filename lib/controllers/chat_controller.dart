@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:get/get.dart';
 import '../models/chat_model.dart';
 import '../models/contact_model.dart';
@@ -41,7 +40,7 @@ class ChatController extends GetxController{
     } catch (e) {
       print("خطا: $e");
     } finally {
-      isLoadingChatList.value = false; // پایان بارگذاری
+      isLoadingChatList.value = false;
     }
   }
 

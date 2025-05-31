@@ -21,8 +21,8 @@ class LoginController extends GetxController {
   var loginData = Rxn<LoginModel>();
   var otpData = Rxn<TokenModel>();
 
-  final otpTimer = 50.obs; // شمارش معکوس ثانیه‌ها
-  final isResendVisible = false.obs; // نمایش دکمه "ارسال مجدد"
+  final otpTimer = 50.obs;
+  final isResendVisible = false.obs;
   Timer? _timer;
 
   @override
@@ -107,7 +107,7 @@ class LoginController extends GetxController {
     } catch (e) {
       print("خطا: $e");
     } finally {
-      isLoadingOtp.value = false; // پایان بارگذاری
+      isLoadingOtp.value = false;
     }
   }
 }

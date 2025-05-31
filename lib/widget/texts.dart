@@ -11,5 +11,4 @@ class TextsView {
   static String textTrialing = "هیچگاه";
   static String textNewMessage = "نوشتن پیام جدید";
   static String textFirstDirect = "هنوز به این دنیا وارد نشدی\nیه پورتال بزن یه گوشی رفیقت";
-
 }

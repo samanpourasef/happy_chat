@@ -32,8 +32,6 @@ class BackButtonRow extends StatelessWidget {
               ),
             ),
           ),
-
-
         ],
       ),
     );

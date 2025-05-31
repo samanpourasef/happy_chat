@@ -106,7 +106,6 @@ class OtpLogin extends StatelessWidget {
                     Directionality(
                       textDirection: TextDirection.ltr,
                       child: OtpTextField(
-
                         keyboardType: TextInputType.number,
                         fieldHeight: 60,
                         fieldWidth: 60,
@@ -118,7 +117,6 @@ class OtpLogin extends StatelessWidget {
                         focusedBorderColor: Color(0xFFEB5757),
                         textStyle: Theme.of(context).textTheme.bodyMedium,
                         showFieldAsBox: true,
-
                         onSubmit: (value) async {
                           int number = int.parse(value);
                          await login.fetchOtp(number);
@@ -158,8 +156,6 @@ class OtpLogin extends StatelessWidget {
                       );
                     }),
                     Expanded(child: Container())
-
-                    // Expanded(child: Container())
                   ],
                 ),
               ),
