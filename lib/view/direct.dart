@@ -43,6 +43,7 @@ class Direct extends StatelessWidget {
     print('token ${myToken}   ${contactToken}');
     return WillPopScope(
       onWillPop: () async{
+        controller.client.disconnect();
         controller.messages.clear();
         return true;
       },
