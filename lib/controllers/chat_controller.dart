@@ -33,7 +33,7 @@ class ChatController extends GetxController{
       if (data != null) {
         contacts.value = data;
         if (contacts.value!.data.isNotEmpty) {
-          Get.to(ChatList());
+          Get.to(ChatList(token:token));
         }else{
         }
       }

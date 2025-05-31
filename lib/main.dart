@@ -6,8 +6,10 @@ import 'package:happy_chat/view/chat_list.dart';
 import 'package:happy_chat/view/direct.dart';
 import 'package:happy_chat/view/login.dart';
 import 'package:happy_chat/view/otp.dart';
-void main() {
-  runApp(const MyApp());
+import 'package:happy_chat/view/splash.dart';
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -23,11 +25,12 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/login', page: () => Login(),),
         GetPage(name: '/otp', page: () => OtpLogin(),),
-        GetPage(name: '/ChatList', page: () => ChatList(),),
+        GetPage(name: '/ChatList', page: () => ChatList(token: "",),),
         GetPage(name: '/Direct', page: () => Direct(username: "",myToken: '',contactToken: '',),),
+        GetPage(name: '/splash', page: () =>  SplashPage()),
       ],
       initialBinding: MyBinding(),
-      initialRoute: 'login',
+      initialRoute: '/splash',
 
     );
   }

@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
+
 import 'package:happy_chat/view/chat_list.dart';
 import '../models/login_model.dart';
 import '../models/token_model.dart';
@@ -88,21 +90,22 @@ class LoginController extends GetxController {
     }
   }
 
-  Future fetchOtp(int otp) async{
+  Future fetchOtp(int otp) async {
     isLoadingOtp.value = true;
     try {
-      var data = await Api.otp(textController.text,otp);
+      var data = await Api.otp(textController.text, otp);
       if (data != null) {
         otpData.value = data;
         if (otpData.value!.token.isNotEmpty) {
           print('my token ${otpData.value!.token}');
+          final secureStorage = FlutterSecureStorage();
+          await secureStorage.write(key: 'token', value: otpData.value!.token);
           contacts.fetchContacts(otpData.value!.token);
-
-        }else{
-          showValidationErrorOtp.value=true;
+        } else {
+          showValidationErrorOtp.value = true;
         }
       } else {
-
+        // handle null data if needed
       }
     } catch (e) {
       print("خطا: $e");

@@ -5,7 +5,7 @@ import '../controllers/chat_controller.dart';
 class MyBinding implements Bindings{
   @override
   void dependencies() {
-    Get.put(LoginController());
+    Get.put(LoginController(),permanent: true);
     // TODO: implement dependencies
   }
 
